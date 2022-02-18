@@ -1,6 +1,6 @@
 <?php 
     /* Inicio Clase conectar */
-    class onectar{
+    class Conectar{
         protected $dbh;
 
         /* Función protegida de la cadena de Conexión */
