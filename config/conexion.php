@@ -1,4 +1,6 @@
 <?php 
+    /* Inicializando la sesión de usuario */
+    session_start();
     /* Inicio Clase conectar */
     class Conectar{
         protected $dbh;
@@ -22,7 +24,7 @@
         }
 
         /* Ruta principal del proyecto */
-        public function ruta(){
+        public static function ruta(){
             return "http://certificado.test/";
         }
     }
