@@ -46,3 +46,8 @@ $(document).ready(function(){
         },
     });
 });
+
+/* Recibimos la acción del botón que hace referencia al id del certificado en "mis certificados" (onClic) de usuario. */
+function certificado(curd_id){
+    window.open('../Certificado/index.php?curd_id='+curd_id+'','_blank');
+}
