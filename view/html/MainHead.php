@@ -25,13 +25,14 @@
     <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
     <meta name="author" content="ThemePixels">
 
-    
     <!-- vendor css -->
     <link href="../../public/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="../../public/lib/Ionicons/css/ionicons.css" rel="stylesheet">
     <link href="../../public/lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
     <link href="../../public/lib/jquery-switchbutton/jquery.switchButton.css" rel="stylesheet">
-    
     <!-- Bracket CSS -->
     <link href="../../public/css/bracket.css" rel="stylesheet">
-    
+
+    <!-- datatables CSS -->
+    <link href="../../public/lib/datatables/jquery.dataTables.css" rel="stylesheet">
+    <link href="../../public/datatables/buttons.dataTables.min.css" rel="stylesheet">

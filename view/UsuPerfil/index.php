@@ -25,10 +25,9 @@ if (isset($_SESSION["usu_id"])) {
                 <p class="mg-b-0">Pantalla Perfil.</p>
             </div>
             <div class="br-pagebody">
-                <!-- start you own content here ************************* -->
+
             </div>
-        </div>
-        <?php require_once '../html/MainJs.php'; ?>
+             <?php require_once '../html/MainJs.php'; ?>
     </body>
 
     </html>
