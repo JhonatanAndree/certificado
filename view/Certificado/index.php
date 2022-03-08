@@ -13,11 +13,8 @@
         <img src="../../public/certificado.png" class="img-fluid" alt="Responsive image">
       </h1>
       <br>
-      <p class="tx-16 mg-b-30">
-        The page you are looking for might have been removed, had its name changed,
-        or unavailable. Maybe you could try a search.
-        The page you are looking for might have been removed, had its name changed,
-        or unavailable. Maybe you could try a search.
+      <p class="tx-16 mg-b-30 text-justify" id="cur_descrip"> <!-- Usamos un id para llamar a la descripción del curso (certificado.js) -->
+        
       </p>
       <div class="form-layout-footer">
         <button class="btn btn-outline-info"><i class="fa fa-send mg-r-10"></i>PDF</button>
@@ -27,7 +24,7 @@
   </div>
 
   <?php include '../html/MainJs.php'; ?>
-
+  <script type="text/javascript" src="certificado.js"></script>
 </body>
 
 </html>

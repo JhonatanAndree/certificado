@@ -31,5 +31,29 @@
             echo json_encode($results);
 
             break;
+
+        /* Microservicio para mostrar información del certificado con el curd_id */
+        case "mostrar_curso_detalle":
+            $datos = $usuario->get_curso_x_id_detalle($_POST['curd_id']);
+            if(is_array($datos)==true and count($datos)<>0){
+                foreach($datos as $row){
+                    $output["curd_id"] = $row["curd_id"];
+                    $output["cur_id"] = $row["cur_id"];
+                    $output["cur_nom"] = $row["cur_nom"];
+                    $output["cur_descrip"] = $row["cur_descrip"];
+                    $output["cur_fechIni"] = $row["cur_fechIni"];
+                    $output["cur_fechFin"] = $row["cur_fechFin"];
+                    $output["usu_id"] = $row["usu_id"];
+                    $output["usu_nom"] = $row["usu_nom"];
+                    $output["usu_apep"] = $row["usu_apep"];
+                    $output["usu_apem"] = $row["usu_apem"];
+                    $output["inst_id"] = $row["inst_id"];
+                    $output["inst_nom"] = $row["inst_nom"];
+                    $output["inst_apep"] = $row["inst_apep"];
+                    $output["inst_apem"] = $row["inst_apem"];
+                }
+                echo json_encode($output);
+            }
+            break;
     }
 ?>
