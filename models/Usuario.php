@@ -90,7 +90,7 @@
                 tm_usuario ON td_curso_usuario.usu_id = tm_usuario.usu_id INNER JOIN
                 tm_instructor ON tm_curso.inst_id = tm_instructor.inst_id
                 WHERE
-                td_curso_usuario.usu_id = ?";
+                td_curso_usuario.curd_id = ?"; /* <-- Actualizar este dato para obtener id del curso (curd_id) */
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1, $curd_id);
             $sql->execute();

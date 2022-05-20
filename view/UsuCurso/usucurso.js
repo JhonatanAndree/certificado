@@ -13,7 +13,7 @@ $(document).ready(function(){
             /* Llamamos al servicio "listar_cursos" desde el controlador pero este necesita un parámetro url que es "usu_id" y este es el id del usuario que está logueado. */
             url: "../../controller/usuario.php?op=listar_cursos",
             type: "post",
-            data: {usu_id:1},
+            data: {usu_id:1},/* Mantenemos el número 1 para ejemplo. */
         },
         "bDestroy": true,
         "responsive": true,

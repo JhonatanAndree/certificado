@@ -1,8 +1,7 @@
 <?php
 /* Llamada a conexion */
-require_once("../../config/conexion.php");
-if (isset($_SESSION["usu_id"])) {
-?>
+require_once '../../config/conexion.php';
+if (isset($_SESSION['usu_id'])) { ?>
     <!DOCTYPE html>
     <html lang="es">
 
@@ -25,15 +24,11 @@ if (isset($_SESSION["usu_id"])) {
                 <p class="mg-b-0">Pantalla Perfil.</p>
             </div>
             <div class="br-pagebody">
-
             </div>
-             <?php require_once '../html/MainJs.php'; ?>
+            <?php require_once '../html/MainJs.php'; ?>
     </body>
 
     </html>
-<?php
-} else {
-    /* Redirección de no haber iniciado sesión */
-    header("Location:" . conectar::ruta() . "view/404");
-}
+<?php } else {/* Redirección de no haber iniciado sesión */
+    header('Location:' . conectar::ruta() . 'view/404');}
 ?>
