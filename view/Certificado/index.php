@@ -18,13 +18,14 @@
                 <!-- Usamos un id para llamar a la descripción del curso (certificado.js) -->
             </p>
             <div class="form-layout-footer">
-                <button class="btn btn-outline-info"><i class="fa fa-send mg-r-10"></i>PDF</button>
-                <button class="btn btn-outline-success"><i class="fa fa-send mg-r-10"></i>PNG</button>
+                <button class="btn btn-outline-info" id="btnpng"><i class="fa fa-send mg-r-10"></i>PNG</button>
+                <button class="btn btn-outline-success" id="btnpdf"><i class="fa fa-send mg-r-10"></i>PDF</button>
             </div>
         </div>
     </div>
 
     <?php include '../html/MainJs.php'; ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
     <script type="text/javascript" src="certificado.js"></script>
 </body>
 

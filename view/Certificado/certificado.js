@@ -46,6 +46,24 @@ $(document).ready(function () {
 
 });
 
+/* Llamamos a los botones para la descarga del certificado en png y pdf respectivamente. */
+$(document).on('click','#btnpng', function(){
+    /* Método para descargar documento png */
+    let lblpng = document.createElement('a');
+    lblpng.download = 'Certificado.png';
+    lblpng.href = canvas.toDataURL();
+    lblpng.click();
+});
+
+$(document).on('click','#btnpdf', function(){
+    /* Método para descargar documento pdf */
+    var imgData = canvas.toDataURL('image/png');
+    var doc = new jsPDF('l', 'mm', 'a4');
+    doc.addImage(imgData, 'PNG', 30, 15);
+    doc.save('Certificado.pdf');
+});
+/* Llamamos a los botones para la descarga del certificado en png y pdf respectivamente. */
+
 /* Código para obtener datos dinámicos para mostrar en el certificado. */
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
