@@ -22,3 +22,5 @@ WHERE
 td_curso_usuario.usu_id = 1
 --------------------------------------------------------------------------------------------------------------------
 
+/* Consulta SQL para saber cuantos cursos tiene cada usuario y mostrarlos en el panel de control. */
+SELECT COUNT(*) as total FROM `td_curso_usuario` WHERE usu_id=1
