@@ -66,6 +66,38 @@
             return $resultado=$sql->fetchALL();
         }
 
+        /* Mostrar los cursos TOP 10. */
+        public function get_cursos_x_usuario_top10($usu_id){
+            $conectar=parent::conexion();
+            parent::set_names();
+            $sql="SELECT
+                td_curso_usuario.curd_id,
+                tm_curso.cur_id,
+                tm_curso.cur_nom,
+                tm_curso.cur_descrip,
+                tm_curso.cur_fechIni,
+                tm_curso.cur_fechFin,
+                tm_usuario.usu_id,
+                tm_usuario.usu_nom,
+                tm_usuario.usu_apep,
+                tm_usuario.usu_apem,
+                tm_instructor.inst_id,
+                tm_instructor.inst_nom,
+                tm_instructor.inst_apep,
+                tm_instructor.inst_apem
+                FROM `td_curso_usuario` INNER JOIN
+                tm_curso on td_curso_usuario.cur_id = tm_curso.cur_id INNER JOIN
+                tm_usuario ON td_curso_usuario.usu_id = tm_usuario.usu_id INNER JOIN
+                tm_instructor ON tm_curso.inst_id = tm_instructor.inst_id
+                WHERE
+                td_curso_usuario.usu_id = ?
+                LIMIT 10";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $usu_id);
+            $sql->execute();
+            return $resultado=$sql->fetchALL();
+        }
+
         /* Mostrar los datos de un curso por su id de detalle. */
         public function get_curso_x_id_detalle($curd_id){
             $conectar=parent::conexion();
@@ -90,7 +122,7 @@
                 tm_usuario ON td_curso_usuario.usu_id = tm_usuario.usu_id INNER JOIN
                 tm_instructor ON tm_curso.inst_id = tm_instructor.inst_id
                 WHERE
-                td_curso_usuario.curd_id = ?"; /* <-- Actualizar este dato para obtener id del curso (curd_id) */
+                td_curso_usuario.curd_id = ?";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1, $curd_id);
             $sql->execute();

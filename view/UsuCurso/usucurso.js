@@ -1,3 +1,4 @@
+var usu_id = $('#usu_idx').val();
 /* Llamar a la lista del data table cuando el documento esté listo se ejecute aquí. */
 $(document).ready(function(){
     $('#cursos_data').DataTable({
@@ -13,7 +14,7 @@ $(document).ready(function(){
             /* Llamamos al servicio "listar_cursos" desde el controlador pero este necesita un parámetro url que es "usu_id" y este es el id del usuario que está logueado. */
             url: "../../controller/usuario.php?op=listar_cursos",
             type: "post",
-            data: {usu_id:1},/* Mantenemos el número 1 para ejemplo. */
+            data: {usu_id:usu_id},
         },
         "bDestroy": true,
         "responsive": true,

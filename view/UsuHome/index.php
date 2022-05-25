@@ -26,6 +26,8 @@ if (isset($_SESSION["usu_id"])) {
             </div>
             <div class="br-pagebody mg-t-5 pd-x-30">
                 <!-- Contenido -->
+
+                <!-- Contador Resumen del total de cursos -->
                 <div class="row row-sm">
                     <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
                         <div class="bg-br-primary rounded overflow-hidden">
@@ -40,6 +42,45 @@ if (isset($_SESSION["usu_id"])) {
                         </div>
                     </div>
                 </div><!-- row -->
+
+                <!-- Tabla Resumen top 10 cursos -->
+                <div class="row row-sm mg-t-20">
+                    <div class="col-12">
+                        <div class="card pd-0 bd-0 shadow-base">
+                            <div class="pd-x-30 pd-t-30 pd-b-15">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">Top ultimos 10 cursos</h6>
+                                        <p class="mg-b-0">Visualización de los certificados obtenidos</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pd-x-15 pd-b-15">
+                                <!-- Contenido Tabla Cursos de Usuario -->
+
+                                <div class="table-wrapper">
+                                    <table id="cursos_data" class="table display responsive nowrap">
+                                        <!-- Usamos el nombre "id=cursos_data" para llamarlo desde usucurso.js. -->
+                                        <thead>
+                                            <tr>
+                                                <th class="wd-15p">Curso</th>
+                                                <th class="wd-15p">Fecha Inicio</th>
+                                                <th class="wd-20p">Fecha Fin</th>
+                                                <th class="wd-15p">Profesor</th>
+                                                <th class="wd-10p">Ver</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div><!-- table-wrapper -->
+
+                                <!-- Contenido Tabla Cursos de Usuario fin-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Contenido -->
             </div>
         </div>
