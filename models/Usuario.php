@@ -139,4 +139,15 @@
             $sql->execute();
             return $resultado=$sql->fetchALL();
         }
+
+        /* Mostrar usuario por id, para el llenado de inputs en el formulario Perfil.*/
+        public function get_usuario_x_id($usu_id){
+            $conectar=parent::conexion();
+            parent::set_names();
+            $sql="SELECT * FROM `tm_usuario` WHERE est=?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $usu_id);
+            $sql->execute();
+            return $resultado=$sql->fetchALL();
+        }
     }
