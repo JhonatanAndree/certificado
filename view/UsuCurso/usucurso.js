@@ -1,6 +1,7 @@
 var usu_id = $('#usu_idx').val();
-/* Llamar a la lista del data table cuando el documento esté listo se ejecute aquí. */
+
 $(document).ready(function(){
+
     $('#cursos_data').DataTable({
         "aProcessing": true,
         "aServerSide": true,
@@ -11,16 +12,15 @@ $(document).ready(function(){
             'csvHtml5',
         ],
         "ajax":{
-            /* Llamamos al servicio "listar_cursos" desde el controlador pero este necesita un parámetro url que es "usu_id" y este es el id del usuario que está logueado. */
-            url: "../../controller/usuario.php?op=listar_cursos",
-            type: "post",
-            data: {usu_id:usu_id},
+            url:"../../controller/usuario.php?op=listar_cursos",
+            type:"post",
+            data:{usu_id:usu_id},
         },
         "bDestroy": true,
         "responsive": true,
-        "bInfo": true,
+        "bInfo":true,
         "iDisplayLength": 15,
-        "order": [[0, "desc"]],
+        "order": [[ 0, "desc" ]],
         "language": {
             "sProcessing":     "Procesando...",
             "sLengthMenu":     "Mostrar _MENU_ registros",
@@ -46,9 +46,10 @@ $(document).ready(function(){
             }
         },
     });
+
 });
 
-/* Recibimos la acción del botón que hace referencia al id del certificado en "mis certificados" (onClic) de usuario. */
 function certificado(curd_id){
-    window.open('../Certificado/index.php?curd_id='+curd_id+'','_blank');
+    console.log(curd_id);
+    window.open('../Certificado/index.php?curd_id='+ curd_id +'','_blank');
 }

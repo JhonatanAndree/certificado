@@ -1,7 +1,8 @@
 var usu_id = $('#usu_idx').val();
 
 $(document).ready(function(){
-    $.post('../../controller/usuario.php?op=total', { usu_id: usu_id }, function (data) {
+
+    $.post("../../controller/usuario.php?op=total", { usu_id : usu_id }, function (data) {
         data = JSON.parse(data);
         $('#lbltotal').html(data.total);
     });
@@ -16,16 +17,15 @@ $(document).ready(function(){
             'csvHtml5',
         ],
         "ajax":{
-            /* Llamamos al servicio "listar_cursos" desde el controlador pero este necesita un parámetro url que es "usu_id" y este es el id del usuario que está logueado. */
-            url: "../../controller/usuario.php?op=listar_cursos_top10",
-            type: "post",
-            data: {usu_id:usu_id},
+            url:"../../controller/usuario.php?op=listar_cursos_top10",
+            type:"post",
+            data:{usu_id:usu_id},
         },
         "bDestroy": true,
         "responsive": true,
-        "bInfo": true,
+        "bInfo":true,
         "iDisplayLength": 10,
-        "order": [[0, "desc"]],
+        "order": [[ 0, "desc" ]],
         "language": {
             "sProcessing":     "Procesando...",
             "sLengthMenu":     "Mostrar _MENU_ registros",
@@ -54,3 +54,7 @@ $(document).ready(function(){
 
 });
 
+function certificado(curd_id){
+    console.log(curd_id);
+    window.open('../Certificado/index.php?curd_id='+ curd_id +'','_blank');
+}

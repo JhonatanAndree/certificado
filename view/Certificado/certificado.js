@@ -1,70 +1,71 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-/* Iniciamos la imagen */
+/* Inicializamos la imagen */
 const image = new Image();
-/* Ruta de la imagen */
-image.src = "../../public/Certificado2.png";
+const imageqr = new Image();
 
-$(document).ready(function () {
+$(document).ready(function(){
     var curd_id = getUrlParameter('curd_id');
 
-    $.post('../../controller/usuario.php?op=mostrar_curso_detalle', { curd_id: curd_id }, function (data) {
+    $.post("../../controller/usuario.php?op=mostrar_curso_detalle", { curd_id : curd_id }, function (data) {
         data = JSON.parse(data);
-        $('#cur_descrip').html(data.cur_descrip);
-        /* Dimensión y selección de imagen */
-        ctx.drawImage(image, 0, 0, canvas.width, canvas.height); /* Dibujo de imagen. */
-        /* Tamaño de la fuente */
-        ctx.font = 'bold 40px Arial';
-        /* Centrar texto superior e inferior */
-        ctx.textAlign = 'center';
+
+        /* Ruta de la Imagen */
+        image.src = data.cur_img;
+        /* Dimensionamos y seleccionamos imagen */
+        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+        /* Definimos tamaño de la fuente */
+        ctx.font = '40px Arial';
+        ctx.textAlign = "center";
         ctx.textBaseline = 'middle';
-        /* Definir ancho de imagen y lo dividimos entre 2 para colocarlo a la mitad*/
         var x = canvas.width / 2;
-        /* Marcamos la posición del texto en x y en y */
-        ctx.fillText(data.usu_nom + ' '+ data.usu_apep +' ' +data.usu_apem, x, 246);
+        ctx.fillText(data.usu_nom+' '+ data.usu_apep+' '+data.usu_apem, x, 250);
 
-        ctx.font = 'bold 26px Arial';
-        ctx.fillText(data.cur_nom, x, 345);
+        ctx.font = '30px Arial';
+        ctx.fillText(data.cur_nom, x, 320);
 
-        ctx.font = 'bold 18px Arial';
-        ctx.fillText(data.inst_nom + ' '+ data.inst_apep +' ' +data.inst_apem, x, 416);
+        ctx.font = '18px Arial';
+        ctx.fillText(data.inst_nom+' '+ data.inst_apep+' '+data.inst_apem, x, 420);
+        ctx.font = '15px Arial';
+        ctx.fillText('Instructor', x, 450);
 
-        ctx.font = 'bold 15px Arial';
-        ctx.fillText('Fecha Inicio: '+ data.cur_fechIni +' / '+' Fecha Fin: '+data.cur_fechFin+'', x, 560);
+        ctx.font = '15px Arial';
+        ctx.fillText('Fecha de Inicio : '+data.cur_fechini+' / '+'Fecha de Finalización : '+data.cur_fechfin+'', x, 490);
 
-        var y = canvas.width / 3.3;
+        /* Ruta de la Imagen */
+        imageqr.src = "../../public/qr/"+curd_id+".png";
+        /* Dimensionamos y seleccionamos imagen */
+        ctx.drawImage(imageqr, 400, 500, 100, 100);
 
-        ctx.font = 'bold 15px Arial';
-        ctx.fillText("Firma 1", y, 480);
-
-        var z = canvas.height / 0.97;
-        ctx.font = 'bold 15px Arial';
-        ctx.fillText("Firma 2", z, 480);
-
+        $('#cur_descrip').html(data.cur_descrip);
     });
 
 });
 
-/* Llamamos a los botones para la descarga del certificado en png y pdf respectivamente. */
-$(document).on('click','#btnpng', function(){
-    /* Método para descargar documento png */
+/* Recarga por defecto solo 1 vez */
+window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
+
+$(document).on("click","#btnpng", function(){
     let lblpng = document.createElement('a');
-    lblpng.download = 'Certificado.png';
+    lblpng.download = "Certificado.png";
     lblpng.href = canvas.toDataURL();
     lblpng.click();
 });
 
-$(document).on('click','#btnpdf', function(){
-    /* Método para descargar documento pdf */
+$(document).on("click","#btnpdf", function(){
     var imgData = canvas.toDataURL('image/png');
-    var doc = new jsPDF('l', 'mm', 'a4');
+    var doc = new jsPDF('l', 'mm');
     doc.addImage(imgData, 'PNG', 30, 15);
     doc.save('Certificado.pdf');
 });
-/* Llamamos a los botones para la descarga del certificado en png y pdf respectivamente. */
 
-/* Código para obtener datos dinámicos para mostrar en el certificado. */
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
@@ -79,4 +80,3 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
-/* Código para obtener datos dinámicos para mostrar en el certificado. */

@@ -1,31 +1,38 @@
-<?php 
-    /* Inicializando la sesión de usuario */
+<?php
+    /*TODO: Inicializando la sesion del usuario */
     session_start();
-    /* Inicio Clase conectar */
+
+    /*TODO: Iniciamos Clase Conectar */
     class Conectar{
         protected $dbh;
 
-        /* Función protegida de la cadena de Conexión */
-        protected function conexion(){
-            try{
-                /* Cadena de conexión */
-                $conectar = $this->dbh = new PDO('mysql:host=localhost;dbname=jhonatan_certificado', 'root', '');
-                return $conectar;
-            }catch (Exception $e){
-                /* EN caso de errores en la cadena de conexión. */
-                print "¡Error DB!: " . $e->getMessage() . "<br/>";
-                die();
-            }
+        /*TODO: Funcion Protegida de la cadena de Conexion */
+        protected function Conexion(){
+            try {
+                /*TODO: Cadena de Conexion QA*/
+				$conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=andercode_diplomas","root","");
+                /*TODO: Cadena de Conexion Produccion*/
+				//$conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=andercode_diplomas","diploma1","@ndercode");
+				return $conectar;
+			} catch (Exception $e) {
+                /*TODO: En Caso hubiera un error en la cadena de conexion */
+				print "¡Error BD!: " . $e->getMessage() . "<br/>";
+				die();
+			}
         }
 
-        /* Impedir problemas con las ñ o ´ caracteres del español */
+        /*TODO: Para impedir que tengamos problemas con las ñ o tildes */
         public function set_names(){
             return $this->dbh->query("SET NAMES 'utf8'");
         }
 
-        /* Ruta principal del proyecto */
+        /*TODO: Ruta principal del proyecto */
         public static function ruta(){
-            return "http://certificado.test/";
+            //QA
+            return "http://localhost:90/PERSONAL_CertificadosDiplomas/";
+            //Produccion
+            //return "http://diplomas.anderson-bastidas.com/";
         }
+
     }
 ?>
