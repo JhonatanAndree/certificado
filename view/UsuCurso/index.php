@@ -1,10 +1,11 @@
 <?php
-  /* Llamamos al archivo de conexion.php */
-  require_once("../../config/conexion.php");
-  if(isset($_SESSION["usu_id"])){
+/* Llamamos al archivo de conexion.php */
+require_once("../../config/conexion.php");
+if (isset($_SESSION["usu_id"])) {
 ?>
-<!DOCTYPE html>
-<html lang="es">
+  <!DOCTYPE html>
+  <html lang="es">
+
   <head>
     <?php require_once("../html/MainHead.php"); ?>
     <title>Empresa::Curso</title>
@@ -32,14 +33,14 @@
           <p class="mg-b-25 mg-lg-b-50">Desde aqui podra buscar sus cursos por certificado.</p>
 
           <div class="table-wrapper">
-            <table id="cursos_data" class="table display responsive nowrap">
+            <table id="cursos_data" class="table display responsive nowrap"> <!-- id=Nombre de la tabla -->
               <thead>
                 <tr>
                   <th class="wd-15p">Curso</th>
                   <th class="wd-15p">Fecha Inicio</th>
                   <th class="wd-20p">Fecha Fin</th>
-                  <th class="wd-15p">Instructor</th>
-                  <th class="wd-10p"></th>
+                  <th class="wd-15p">Profesor</th>
+                  <th class="wd-10p">Ver</th>
                 </tr>
               </thead>
               <tbody>
@@ -51,13 +52,14 @@
       </div>
 
     </div>
-    <?php require_once("../html/MainJs.php");?>
+    <?php require_once("../html/MainJs.php"); ?>
     <script type="text/javascript" src="usucurso.js"></script>
   </body>
-</html>
+
+  </html>
 <?php
-  }else{
-    /* Si no a iniciado sesion se redireccionada a la ventana principal */
-    header("Location:".Conectar::ruta()."view/404/");
-  }
+} else {
+  /* Si no a iniciado sesion se redireccionada a la ventana principal */
+  header("Location:" . Conectar::ruta() . "view/404/");
+}
 ?>

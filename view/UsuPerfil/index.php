@@ -1,10 +1,11 @@
 <?php
-  /* Llamamos al archivo de conexion.php */
-  require_once("../../config/conexion.php");
-  if(isset($_SESSION["usu_id"])){
+/* Llamamos al archivo de conexion.php */
+require_once("../../config/conexion.php");
+if (isset($_SESSION["usu_id"])) {
 ?>
-<!DOCTYPE html>
-<html lang="es">
+  <!DOCTYPE html>
+  <html lang="es">
+
   <head>
     <?php require_once("../html/MainHead.php"); ?>
 
@@ -95,10 +96,11 @@
     <?php require_once("../html/MainJs.php"); ?>
     <script type="text/javascript" src="usuperfil.js"></script>
   </body>
-</html>
+
+  </html>
 <?php
-  }else{
-    /* Si no a iniciado sesion se redireccionada a la ventana principal */
-    header("Location:".Conectar::ruta()."view/404/");
-  }
+} else {
+  /* Si no a iniciado sesion se redireccionada a la ventana principal */
+  header("Location:" . Conectar::ruta() . "view/404/");
+}
 ?>

@@ -1,6 +1,6 @@
 <?php
     class Usuario extends Conectar{
-        /*TODO: Funcion para login de acceso del usuario */
+        /*Función para login de acceso del usuario */
         public function login(){
             $conectar=parent::conexion();
             parent::set_names();
@@ -36,11 +36,11 @@
             }
         }
 
-        /*TODO: Mostrar todos los cursos en los cuales esta inscrito un usuario */
+        /*Mostrar todos los cursos en los cuales esta inscrito un usuario */
         public function get_cursos_x_usuario($usu_id){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="SELECT 
+            $sql="SELECT
                 td_curso_usuario.curd_id,
                 tm_curso.cur_id,
                 tm_curso.cur_nom,
@@ -56,11 +56,11 @@
                 tm_instructor.inst_nom,
                 tm_instructor.inst_apep,
                 tm_instructor.inst_apem
-                FROM td_curso_usuario INNER JOIN 
+                FROM td_curso_usuario INNER JOIN
                 tm_curso ON td_curso_usuario.cur_id = tm_curso.cur_id INNER JOIN
                 tm_usuario ON td_curso_usuario.usu_id = tm_usuario.usu_id INNER JOIN
                 tm_instructor ON tm_curso.inst_id = tm_instructor.inst_id
-                WHERE 
+                WHERE
                 td_curso_usuario.usu_id = ?";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1, $usu_id);
@@ -88,11 +88,11 @@
                 tm_instructor.inst_nom,
                 tm_instructor.inst_apep,
                 tm_instructor.inst_apem
-                FROM td_curso_usuario INNER JOIN 
+                FROM td_curso_usuario INNER JOIN
                 tm_curso ON td_curso_usuario.cur_id = tm_curso.cur_id INNER JOIN
                 tm_usuario ON td_curso_usuario.usu_id = tm_usuario.usu_id INNER JOIN
                 tm_instructor ON tm_curso.inst_id = tm_instructor.inst_id
-                WHERE 
+                WHERE
                 td_curso_usuario.usu_id = ?
                 AND td_curso_usuario.est = 1
                 LIMIT 10";
@@ -134,7 +134,7 @@
             return $resultado=$sql->fetchAll();
         }
 
-        /*TODO: Mostrar todos los datos de un curso por su id de detalle */
+        /*Mostrar todos los datos de un curso por su id de detalle */
         public function get_curso_x_id_detalle($curd_id){
             $conectar= parent::conexion();
             parent::set_names();
@@ -166,7 +166,7 @@
             return $resultado=$sql->fetchAll();
         }
 
-        /*TODO: Cantidad de Cursos por Usuario */
+        /*Cantidad de Cursos por Usuario */
         public function get_total_cursos_x_usuario($usu_id){
             $conectar= parent::conexion();
             parent::set_names();
@@ -177,7 +177,7 @@
             return $resultado=$sql->fetchAll();
         }
 
-        /*TODO: Mostrar los datos del usuario segun el ID */
+        /*Mostrar los datos del usuario segun el ID */
         public function get_usuario_x_id($usu_id){
             $conectar= parent::conexion();
             parent::set_names();
@@ -188,7 +188,7 @@
             return $resultado=$sql->fetchAll();
         }
 
-        /*TODO: Mostrar los datos del usuario segun el DNI */
+        /*Mostrar los datos del usuario segun el DNI */
         public function get_usuario_x_dni($usu_dni){
             $conectar= parent::conexion();
             parent::set_names();
@@ -199,11 +199,11 @@
             return $resultado=$sql->fetchAll();
         }
 
-        /*TODO: Actualizar la informacion del perfil del usuario segun ID */
+        /*Actualizar la informacion del perfil del usuario segun ID */
         public function update_usuario_perfil($usu_id,$usu_nom,$usu_apep,$usu_apem,$usu_pass,$usu_sex,$usu_telf){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="UPDATE tm_usuario 
+            $sql="UPDATE tm_usuario
                 SET
                     usu_nom = ?,
                     usu_apep = ?,
@@ -225,7 +225,7 @@
             return $resultado=$sql->fetchAll();
         }
 
-        /*TODO: Funcion para insertar usuario */
+        /*Funcion para insertar usuario */
         public function insert_usuario($usu_nom,$usu_apep,$usu_apem,$usu_correo,$usu_pass,$usu_sex,$usu_telf,$rol_id,$usu_dni){
             $conectar= parent::conexion();
             parent::set_names();
@@ -244,7 +244,7 @@
             return $resultado=$sql->fetchAll();
         }
 
-        /*TODO: Funcion para actualizar usuario */
+        /*Funcion para actualizar usuario */
         public function update_usuario($usu_id,$usu_nom,$usu_apep,$usu_apem,$usu_correo,$usu_pass,$usu_sex,$usu_telf,$rol_id,$usu_dni){
             $conectar= parent::conexion();
             parent::set_names();
@@ -276,7 +276,7 @@
             return $resultado=$sql->fetchAll();
         }
 
-        /*TODO: Eliminar cambiar de estado a la categoria */
+        /*Eliminar cambiar de estado a la categoria */
         public function delete_usuario($usu_id){
             $conectar= parent::conexion();
             parent::set_names();
@@ -291,7 +291,7 @@
             return $resultado=$sql->fetchAll();
         }
 
-        /*TODO: Listar todas las categorias */
+        /*Listar todas las categorias */
         public function get_usuario(){
             $conectar= parent::conexion();
             parent::set_names();
@@ -301,7 +301,7 @@
             return $resultado=$sql->fetchAll();
         }
 
-        /*TODO: Listar todas las categorias */
+        /*Listar todas las categorias */
         public function get_usuario_modal($cur_id){
             $conectar= parent::conexion();
             parent::set_names();

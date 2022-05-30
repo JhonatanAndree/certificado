@@ -1,7 +1,7 @@
 var usu_id = $('#usu_idx').val();
 
 $(document).ready(function(){
-
+    /* Llamamoms al controlador, e ingresamos el llamado al id para mostrar el total */
     $.post("../../controller/usuario.php?op=total", { usu_id : usu_id }, function (data) {
         data = JSON.parse(data);
         $('#lbltotal').html(data.total);

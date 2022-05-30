@@ -21,7 +21,7 @@ $(document).ready(function(){
         ctx.textAlign = "center";
         ctx.textBaseline = 'middle';
         var x = canvas.width / 2;
-        ctx.fillText(data.usu_nom+' '+ data.usu_apep+' '+data.usu_apem, x, 250);
+        ctx.fillText(data.usu_nom+' '+data.usu_apep+' '+data.usu_apem, x, 250);
 
         ctx.font = '30px Arial';
         ctx.fillText(data.cur_nom, x, 320);
@@ -38,7 +38,7 @@ $(document).ready(function(){
         imageqr.src = "../../public/qr/"+curd_id+".png";
         /* Dimensionamos y seleccionamos imagen */
         ctx.drawImage(imageqr, 400, 500, 100, 100);
-
+        /* Inserción de la descripción del curso en consulta. */
         $('#cur_descrip').html(data.cur_descrip);
     });
 
@@ -52,20 +52,22 @@ window.onload = function() {
     }
 }
 
+/* Botón png de certificado. */
 $(document).on("click","#btnpng", function(){
     let lblpng = document.createElement('a');
     lblpng.download = "Certificado.png";
     lblpng.href = canvas.toDataURL();
     lblpng.click();
 });
-
+/* Botón pdf de certificado. */
 $(document).on("click","#btnpdf", function(){
     var imgData = canvas.toDataURL('image/png');
-    var doc = new jsPDF('l', 'mm');
+    var doc = new jsPDF('l', 'mm'); /* (L = Formato horizontal del documento.) */
     doc.addImage(imgData, 'PNG', 30, 15);
     doc.save('Certificado.pdf');
 });
 
+/* Función para adquirir id de parametro enviado desde "UsuCurso" y poder tratar los datos. */
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),

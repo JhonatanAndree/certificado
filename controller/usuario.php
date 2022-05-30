@@ -1,15 +1,15 @@
 <?php
-    /*TODO: Llamando a cadena de Conexion */
+    /*Llamando a cadena de Conexion */
     require_once("../config/conexion.php");
-    /*TODO: Llamando a la clase */
+    /*Llamando a la clase */
     require_once("../models/Usuario.php");
-    /*TODO: Inicializando Clase */
+    /*Inicializando Clase */
     $usuario = new Usuario();
 
-    /*TODO: Opcion de solicitud de controller */
+    /*Opcion de solicitud de controller */
     switch($_GET["op"]){
 
-        /*TODO: MicroServicio para poder mostrar el listado de cursos de un usuario con certificado */
+        /*MicroServicio para poder mostrar el listado de cursos de un usuario con certificado */
         case "listar_cursos":
             $datos=$usuario->get_cursos_x_usuario($_POST["usu_id"]);
             $data= Array();
@@ -32,7 +32,7 @@
 
             break;
 
-        /*TODO: MicroServicio para poder mostrar el listado de cursos de un usuario con certificado */
+        /*MicroServicio para poder mostrar el listado de cursos de un usuario con certificado */
         case "listar_cursos_top10":
             $datos=$usuario->get_cursos_x_usuario_top10($_POST["usu_id"]);
             $data= Array();
@@ -55,7 +55,7 @@
 
             break;
 
-        /*TODO: Microservicio para mostar informacion del certificado con el curd_id */
+        /*Microservicio para mostar informacion del certificado con el curd_id */
         case "mostrar_curso_detalle":
             $datos = $usuario->get_curso_x_id_detalle($_POST["curd_id"]);
             if(is_array($datos)==true and count($datos)<>0){
@@ -80,18 +80,18 @@
                 echo json_encode($output);
             }
             break;
-        /*TODO: Total de Cursos por usuario para el dashboard */
+        /*Total de Cursos por usuario para el dashboard */
         case "total":
             $datos=$usuario->get_total_cursos_x_usuario($_POST["usu_id"]);
             if(is_array($datos)==true and count($datos)>0){
                 foreach($datos as $row)
                 {
-                    $output["total"] = $row["total"];
+                    $output["total"] = $row["total"]; /* Variable "total" ingresada en la consulta SQL del modelo. */
                 }
                 echo json_encode($output);
             }
             break;
-        /*TODO: Mostrar informacion del usuario en la vista perfil */
+        /*Mostrar informacion del usuario en la vista perfil */
         case "mostrar":
             $datos = $usuario->get_usuario_x_id($_POST["usu_id"]);
             if(is_array($datos)==true and count($datos)<>0){
@@ -110,7 +110,7 @@
                 echo json_encode($output);
             }
             break;
-        /*TODO: Mostrar informacion segun DNI del usuario registrado */
+        /*Mostrar informacion segun DNI del usuario registrado */
         case "consulta_dni":
             $datos = $usuario->get_usuario_x_dni($_POST["usu_dni"]);
             if(is_array($datos)==true and count($datos)<>0){
@@ -129,7 +129,7 @@
                 echo json_encode($output);
             }
             break;
-        /*TODO: Actualizar datos de perfil */
+        /*Actualizar datos de perfil */
         case "update_perfil":
             $usuario->update_usuario_perfil(
                 $_POST["usu_id"],
@@ -141,7 +141,7 @@
                 $_POST["usu_telf"]
             );
             break;
-        /*TODO: Guardar y editar cuando se tenga el ID */
+        /*Guardar y editar cuando se tenga el ID */
         case "guardaryeditar":
             if(empty($_POST["usu_id"])){
                 $usuario->insert_usuario($_POST["usu_nom"],$_POST["usu_apep"],$_POST["usu_apem"],$_POST["usu_correo"],$_POST["usu_pass"],$_POST["usu_sex"],$_POST["usu_telf"],$_POST["rol_id"],$_POST["usu_dni"]);
@@ -149,11 +149,11 @@
                 $usuario->update_usuario($_POST["usu_id"],$_POST["usu_nom"],$_POST["usu_apep"],$_POST["usu_apem"],$_POST["usu_correo"],$_POST["usu_pass"],$_POST["usu_sex"],$_POST["usu_telf"],$_POST["rol_id"],$_POST["usu_dni"]);
             }
             break;
-        /*TODO: Eliminar segun ID */
+        /*Eliminar segun ID */
         case "eliminar":
             $usuario->delete_usuario($_POST["usu_id"]);
             break;
-        /*TODO:  Listar toda la informacion segun formato de datatable */
+        /*Listar toda la informacion segun formato de datatable */
         case "listar":
                 $datos=$usuario->get_usuario();
                 $data= Array();
@@ -181,7 +181,7 @@
                     "aaData"=>$data);
                 echo json_encode($results);
                 break;
-        /*TODO: Listar todos los usuarios pertenecientes a un curso */
+        /*Listar todos los usuarios pertenecientes a un curso */
         case "listar_cursos_usuario":
             $datos=$usuario->get_cursos_usuario_x_id($_POST["cur_id"]);
             $data= Array();

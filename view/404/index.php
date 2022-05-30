@@ -14,7 +14,7 @@
         <p class="tx-16 mg-b-30">Por favor verificar o comunicarse con el administrador.</p>
 
         <div class="text-center">
-            <a href="../../index.php" class="btn btn-info"><i class="fa fa-home"></i> Regresar</a>
+            <a href="../../index.php" class="btn btn-info"><i class="fa fa-home"></i>Regresar</a>
         </div>
       </div>
     </div>
