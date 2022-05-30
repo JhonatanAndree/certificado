@@ -1,14 +1,14 @@
 <?php
-    /*TODO: Llamando a cadena de Conexion */
+    /*Llamando a cadena de Conexion */
     require_once("../config/conexion.php");
-    /*TODO: Llamando a la clase */
+    /*Llamando a la clase */
     require_once("../models/Categoria.php");
-    /*TODO: Inicializando Clase */
+    /*Inicializando Clase */
     $categoria = new Categoria();
 
-    /*TODO: Opcion de solicitud de controller */
+    /*Opcion de solicitud de controller */
     switch($_GET["op"]){
-        /*TODO: Guardar y editar cuando se tenga el ID */
+        /*Guardar y editar cuando se tenga el ID */
         case "guardaryeditar":
             if(empty($_POST["cat_id"])){
                 $categoria->insert_categoria($_POST["cat_nom"]);
@@ -16,7 +16,7 @@
                 $categoria->update_categoria($_POST["cat_id"],$_POST["cat_nom"]);
             }
             break;
-        /*TODO: Creando Json segun el ID */
+        /*Creando Json segun el ID */
         case "mostrar":
             $datos = $categoria->get_categoria_id($_POST["cat_id"]);
             if(is_array($datos)==true and count($datos)<>0){
@@ -27,11 +27,11 @@
                 echo json_encode($output);
             }
             break;
-        /*TODO: Eliminar segun ID */
+        /*Eliminar segun ID */
         case "eliminar":
             $categoria->delete_categoria($_POST["cat_id"]);
             break;
-        /*TODO:  Listar toda la informacion segun formato de datatable */
+        /* Listar toda la informacion segun formato de datatable */
         case "listar":
             $datos=$categoria->get_categoria();
             $data= Array();
@@ -50,11 +50,11 @@
                 "aaData"=>$data);
             echo json_encode($results);
             break;
-        /*TODO:  Listar toda la informacion segun formato de datatable */
+        /* Listar toda la informacion segun formato de datatable */
         case "combo":
             $datos=$categoria->get_categoria();
             if(is_array($datos)==true and count($datos)>0){
-                $html= " <option label='Seleccione'></option>";
+                $html= " <option label='Seleccione'></option>";/* Variable de selección. */
                 foreach($datos as $row){
                     $html.= "<option value='".$row['cat_id']."'>".$row['cat_nom']."</option>";
                 }

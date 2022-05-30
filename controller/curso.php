@@ -1,14 +1,14 @@
 <?php
-    /*TODO: Llamando a cadena de Conexion */
+    /*Llamando a cadena de Conexion */
     require_once("../config/conexion.php");
-    /*TODO: Llamando a la clase */
+    /*Llamando a la clase */
     require_once("../models/Curso.php");
-    /*TODO: Inicializando Clase */
+    /*Inicializando Clase */
     $curso = new Curso();
 
-    /*TODO: Opcion de solicitud de controller */
+    /*Opcion de solicitud de controller */
     switch($_GET["op"]){
-        /*TODO: Guardar y editar cuando se tenga el ID */
+        /*Guardar y editar cuando se tenga el ID */
         case "guardaryeditar":
             if(empty($_POST["cur_id"])){
                 $curso->insert_curso($_POST["cat_id"],$_POST["cur_nom"],$_POST["cur_descrip"],$_POST["cur_fechini"],$_POST["cur_fechfin"],$_POST["inst_id"]);
@@ -16,7 +16,7 @@
                 $curso->update_curso($_POST["cur_id"],$_POST["cat_id"],$_POST["cur_nom"],$_POST["cur_descrip"],$_POST["cur_fechini"],$_POST["cur_fechfin"],$_POST["inst_id"]);
             }
             break;
-        /*TODO: Creando Json segun el ID */
+        /*Creando Json segun el ID */
         case "mostrar":
             $datos = $curso->get_curso_id($_POST["cur_id"]);
             if(is_array($datos)==true and count($datos)<>0){
@@ -32,11 +32,11 @@
                 echo json_encode($output);
             }
             break;
-        /*TODO: Eliminar segun ID */
+        /*Eliminar segun ID */
         case "eliminar":
             $curso->delete_curso($_POST["cur_id"]);
             break;
-        /*TODO:  Listar toda la informacion segun formato de datatable */
+        /* Listar toda la informacion según formato de datatable */
         case "listar":
             $datos=$curso->get_curso();
             $data= Array();
@@ -48,8 +48,8 @@
                 $sub_array[] = $row["cur_fechfin"];
                 $sub_array[] = $row["inst_nom"] ." ". $row["inst_apep"] ." ". $row["inst_apem"];
                 $sub_array[] = '<button type="button" onClick="editar('.$row["cur_id"].');"  id="'.$row["cur_id"].'" class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
-                $sub_array[] = '<button type="button" onClick="eliminar('.$row["cur_id"].');"  id="'.$row["cur_id"].'" class="btn btn-outline-danger btn-icon"><div><i class="fa fa-close"></i></div></button>';                
-                $sub_array[] = '<button type="button" onClick="imagen('.$row["cur_id"].');"  id="'.$row["cur_id"].'" class="btn btn-outline-success btn-icon"><div><i class="fa fa-file"></i></div></button>';                
+                $sub_array[] = '<button type="button" onClick="eliminar('.$row["cur_id"].');"  id="'.$row["cur_id"].'" class="btn btn-outline-danger btn-icon"><div><i class="fa fa-close"></i></div></button>';
+                $sub_array[] = '<button type="button" onClick="imagen('.$row["cur_id"].');"  id="'.$row["cur_id"].'" class="btn btn-outline-success btn-icon"><div><i class="fa fa-file"></i></div></button>';
                 $data[] = $sub_array;
             }
 
@@ -60,7 +60,7 @@
                 "aaData"=>$data);
             echo json_encode($results);
             break;
-        /*TODO:  Listar toda la informacion segun formato de datatable */
+        /* Listar toda la informacion según formato de datatable */
         case "combo":
             $datos=$curso->get_curso();
             if(is_array($datos)==true and count($datos)>0){
@@ -75,11 +75,11 @@
         case "eliminar_curso_usuario":
             $curso->delete_curso_usuario($_POST["curd_id"]);
             break;
-        /*TODO: Insetar detalle de curso usuario */
+        /*Insetar detalle de curso usuario */
         case "insert_curso_usuario":
-            /*TODO: Array de usuario separado por comas */
+            /*Array de usuario separado por comas */
             $datos = explode(',', $_POST['usu_id']);
-            /*TODO: Registrar tantos usuarios vengan de la vista */
+            /*Registrar tantos usuarios vengan de la vista */
             $data = Array();
             foreach($datos as $row){
                 $sub_array = array();

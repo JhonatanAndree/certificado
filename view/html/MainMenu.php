@@ -10,7 +10,7 @@
         <span class="menu-item-label">Inicio</span>
       </div>
     </a>
-
+    <!-- Control de sesiones según tipo de usuario, rol y accesos. -->
     <?php
       if($_SESSION["rol_id"]==1){
         ?>
