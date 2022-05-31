@@ -114,7 +114,7 @@ function eliminar(cat_id){
 }
 
 function nuevo(){
-    $('#cat_id').val('');
+    $('#cat_id').val(''); //limpiar id  de categoria
     $('#lbltitulo').html('Nuevo Registro');
     $('#categoria_form')[0].reset();
     $('#modalmantenimiento').modal('show');

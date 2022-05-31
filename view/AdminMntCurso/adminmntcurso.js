@@ -36,7 +36,8 @@ function guardaryeditar(e) {
 
 $(document).ready(function () {
     $('#cat_id').select2({
-        dropdownParent: $('#modalmantenimiento'),/* Permite selección de cat en el modal. */
+        dropdownParent: $('#modalmantenimiento'),
+        /* Permite selección de cat en el modal. */
     })
 
     $('#inst_id').select2({
@@ -92,21 +93,22 @@ $(document).ready(function () {
 })
 
 function editar(cur_id) {
-    $.post('../../controller/curso.php?op=mostrar', {
-        cur_id: cur_id
-    }, function (
-        data,
-    ) {
-        data = JSON.parse(data)
-        $('#cur_id').val(data.cur_id)
-        $('#cat_id').val(data.cat_id).trigger('change')
-        $('#cur_nom').val(data.cur_nom)
-        $('#cur_descrip').val(data.cur_descrip)
-        $('#cur_fechini').val(data.cur_fechini)
-        $('#cur_fechfin').val(data.cur_fechfin)
-        $('#inst_id').val(data.inst_id).trigger('change')
-        1
-    })
+    $.post(
+        '../../controller/curso.php?op=mostrar', {
+            cur_id: cur_id,
+        },
+        function (data) {
+            data = JSON.parse(data)
+            $('#cur_id').val(data.cur_id)
+            $('#cat_id').val(data.cat_id).trigger('change')
+            $('#cur_nom').val(data.cur_nom)
+            $('#cur_descrip').val(data.cur_descrip)
+            $('#cur_fechini').val(data.cur_fechini)
+            $('#cur_fechfin').val(data.cur_fechfin)
+            $('#inst_id').val(data.inst_id).trigger('change')
+            1
+        },
+    )
     $('#lbltitulo').html('Editar Registro')
     $('#modalmantenimiento').modal('show')
 }
@@ -115,7 +117,7 @@ function eliminar(cur_id) {
     swal
         .fire({
             title: 'Eliminar!',
-            text: 'Desea Eliminar el Registro?',
+            text: '¿Desea Eliminar el Registro?',
             icon: 'error',
             confirmButtonText: 'Si',
             showCancelButton: true,
@@ -123,13 +125,8 @@ function eliminar(cur_id) {
         })
         .then((result) => {
             if (result.value) {
-                $.post(
-                    '../../controller/curso.php?op=eliminar', {
-                        cur_id: cur_id
-                    },
-                    function (data) {
-                        $('#cursos_data').DataTable().ajax.reload()
-
+                $.post('../../controller/curso.php?op=eliminar', {cur_id: cur_id,},
+                    function (data) {$('#cursos_data').DataTable().ajax.reload()
                         Swal.fire({
                             title: 'Correcto!',
                             text: 'Se Elimino Correctamente',

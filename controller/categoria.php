@@ -20,7 +20,7 @@
         case "mostrar":
             $datos = $categoria->get_categoria_id($_POST["cat_id"]);
             if(is_array($datos)==true and count($datos)<>0){
-                foreach($datos as $row){
+                foreach($datos as $row){ //Mantener el orden siguiente para evitar fallas en el modal de creación o actualización.
                     $output["cat_id"] = $row["cat_id"];
                     $output["cat_nom"] = $row["cat_nom"];
                 }
@@ -31,7 +31,7 @@
         case "eliminar":
             $categoria->delete_categoria($_POST["cat_id"]);
             break;
-        /* Listar toda la informacion segun formato de datatable */
+        /*Listar toda la informacion segun formato de datatable */
         case "listar":
             $datos=$categoria->get_categoria();
             $data= Array();
@@ -39,7 +39,7 @@
                 $sub_array = array();
                 $sub_array[] = $row["cat_nom"];
                 $sub_array[] = '<button type="button" onClick="editar('.$row["cat_id"].');"  id="'.$row["cat_id"].'" class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
-                $sub_array[] = '<button type="button" onClick="eliminar('.$row["cat_id"].');"  id="'.$row["cat_id"].'" class="btn btn-outline-danger btn-icon"><div><i class="fa fa-close"></i></div></button>';                
+                $sub_array[] = '<button type="button" onClick="eliminar('.$row["cat_id"].');"  id="'.$row["cat_id"].'" class="btn btn-outline-danger btn-icon"><div><i class="fa fa-close"></i></div></button>';
                 $data[] = $sub_array;
             }
 
@@ -50,7 +50,7 @@
                 "aaData"=>$data);
             echo json_encode($results);
             break;
-        /* Listar toda la informacion segun formato de datatable */
+        /*Listar toda la informacion segun formato de datatable */
         case "combo":
             $datos=$categoria->get_categoria();
             if(is_array($datos)==true and count($datos)>0){
