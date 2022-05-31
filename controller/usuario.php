@@ -164,6 +164,7 @@
                     $sub_array[] = $row["usu_apem"];
                     $sub_array[] = $row["usu_correo"];
                     $sub_array[] = $row["usu_telf"];
+                    /* Mostrar Rol de usuario. */
                     if ($row["rol_id"]==1) {
                         $sub_array[] = "Usuario";
                     }else{

@@ -15,7 +15,7 @@ $(document).on("click","#btnconsultar", function(){
             confirmButtonText: 'Aceptar'
         })
     }else{
-        
+
         $.post("../../controller/usuario.php?op=consulta_dni",{usu_dni : usu_dni}, function (data) {
             if (data.length>0){
                 data = JSON.parse(data);

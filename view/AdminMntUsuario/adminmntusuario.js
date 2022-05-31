@@ -1,4 +1,3 @@
-
 var usu_id = $('#usu_idx').val();
 
 function init(){

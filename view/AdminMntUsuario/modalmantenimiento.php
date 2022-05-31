@@ -7,7 +7,7 @@
             <!-- Formulario Mantenimiento -->
             <form method="post" id="usuario_form">
                 <div class="modal-body">
-                    <input type="hidden" name="usu_id" id="usu_id"/>
+                    <input type="hidden" name="usu_id" id="usu_id"/><!-- Identificar usuario. -->
 
                     <div class="col-lg-12">
                         <div class="form-group">
