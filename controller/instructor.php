@@ -16,6 +16,7 @@
                 $instructor->update_instructor($_POST["inst_id"],$_POST["inst_nom"],$_POST["inst_apep"],$_POST["inst_apem"],$_POST["inst_correo"],$_POST["inst_sex"],$_POST["inst_telf"]);
             }
             break;
+
         /*Creando Json segun el ID */
         case "mostrar":
             $datos = $instructor->get_instructor_id($_POST["inst_id"]);
@@ -32,6 +33,7 @@
                 echo json_encode($output);
             }
             break;
+
         /*Eliminar segun ID */
         case "eliminar":
             $instructor->delete_instructor($_POST["inst_id"]);

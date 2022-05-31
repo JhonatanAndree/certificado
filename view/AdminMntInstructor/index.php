@@ -33,7 +33,7 @@
             <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">Instructor</h6>
             <p class="mg-b-30 tx-gray-600">Listado de Instructor</p>
 
-            <button class="btn btn-outline-primary" id="add_button" onclick="nuevo()"><i class="fa fa-plus-square mg-r-10"></i> Nuevo Registro</button>
+            <button class="btn btn-outline-primary" id="add_button" onclick="nuevo()"><i class="fa fa-plus-square mg-r-10"></i>Nuevo Registro</button>
 
             <p></p>
 
