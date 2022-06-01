@@ -52,16 +52,16 @@
             </div>
 
             <p></p>
-
+            <!-- Tabla -->
             <div class="table-wrapper"></div>
                 <table id="detalle_data" class="table display responsive nowrap" width="100%">
                 <thead>
                     <tr>
                     <th class="wd-15p">Curso</th>
-                    <th class="wd-15p">Usuario</th>
+                    <th class="wd-15p">Estudiante</th>
                     <th class="wd-15p">Fecha Inicio</th>
                     <th class="wd-20p">Fecha Fin</th>
-                    <th class="wd-15p">Instructor</th>
+                    <th class="wd-15p">Profesor</th>
                     <th class="wd-10p"></th>
                     <th class="wd-10p"></th>
                     </tr>

@@ -182,14 +182,14 @@
                     "aaData"=>$data);
                 echo json_encode($results);
                 break;
-        /*Listar todos los usuarios pertenecientes a un curso */
+        /*Listar todos los usuarios pertenecientes a un curso, para la pantalla detalle certificado */
         case "listar_cursos_usuario":
             $datos=$usuario->get_cursos_usuario_x_id($_POST["cur_id"]);
             $data= Array();
             foreach($datos as $row){
                 $sub_array = array();
                 $sub_array[] = $row["cur_nom"];
-                $sub_array[] = $row["usu_nom"]." ".$row["usu_apep"]." ".$row["usu_apem"];
+                $sub_array[] = $row["usu_nom"]." ".$row["usu_apep"]." ".$row["usu_apem"]; /* Datos necesarios para listarlos en el data table. */
                 $sub_array[] = $row["cur_fechini"];
                 $sub_array[] = $row["cur_fechfin"];
                 $sub_array[] = $row["inst_nom"]." ".$row["inst_apep"];
@@ -206,11 +206,13 @@
             echo json_encode($results);
             break;
 
+        /* Para la tabla modal de detalle certificado para ser agregados a un estudiante. */
         case "listar_detalle_usuario":
             $datos=$usuario->get_usuario_modal($_POST["cur_id"]);
             $data= Array();
             foreach($datos as $row){
                 $sub_array = array();
+                /* Agregar check para elegir */
                 $sub_array[] = "<input type='checkbox' name='detallecheck[]' value='". $row["usu_id"] ."'>";
                 $sub_array[] = $row["usu_nom"];
                 $sub_array[] = $row["usu_apep"];

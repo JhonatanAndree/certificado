@@ -36,7 +36,7 @@
         case "eliminar":
             $curso->delete_curso($_POST["cur_id"]);
             break;
-        /* Listar toda la informacion según formato de datatable */
+        /*Listar toda la informacion según formato de datatable */
         case "listar":
             $datos=$curso->get_curso();
             $data= Array();
@@ -60,7 +60,7 @@
                 "aaData"=>$data);
             echo json_encode($results);
             break;
-        /* Listar toda la informacion según formato de datatable */
+        /*Listar toda la informacion de los cursos*/
         case "combo":
             $datos=$curso->get_curso();
             if(is_array($datos)==true and count($datos)>0){
@@ -75,7 +75,8 @@
         case "eliminar_curso_usuario":
             $curso->delete_curso_usuario($_POST["curd_id"]);
             break;
-        /*Insetar detalle de curso usuario */
+
+        /*Insetar estudiante al curso seleccionado en Detalle Certificado para lista de estudiantes para un determinado curso seleccionado */
         case "insert_curso_usuario":
             /*Array de usuario separado por comas */
             $datos = explode(',', $_POST['usu_id']);

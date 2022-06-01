@@ -77,8 +77,7 @@ function eliminar(curd_id){
     }).then((result) => {
         if (result.value) {
             $.post("../../controller/curso.php?op=eliminar_curso_usuario",{curd_id : curd_id}, function (data) {
-                $('#detalle_data').DataTable().ajax.reload();
-
+                $('#detalle_data').DataTable().ajax.reload(); /* Nombre del dataTable detalle_data para conectar. */
                 Swal.fire({
                     title: 'Correcto!',
                     text: 'Se Elimino Correctamente',
@@ -89,7 +88,7 @@ function eliminar(curd_id){
         }
     });
 }
-
+/* Permite listar los cursos en el select 2 en la selección de curso para asignar estudiantes, e invocamos en el document ready */
 function combo_curso(){
     $.post("../../controller/curso.php?op=combo", function (data) {
         $('#cur_id').html(data);
@@ -102,6 +101,7 @@ function certificado(curd_id){
 }
 
 function nuevo(){
+    /* Validación para seleccionar curso antes de seleccionar estudiantes */
     if ($('#cur_id').val()==''){
         Swal.fire({
             title: 'Error!',
@@ -116,6 +116,7 @@ function nuevo(){
     }
 }
 
+/* Listar estudiante para el modal de agregar estudiantes a un curso. */
 function listar_usuario(cur_id){
     $('#usuario_data').DataTable({
         "aProcessing": true,
@@ -163,6 +164,7 @@ function listar_usuario(cur_id){
     });
 }
 
+/* Función para capturar los ID de los estudiantes o usuarios que se seleccionaron en el modal para ser agregados al Detalle Certificado, lo que hace posible agregar estudiantes a un curso en específico */
 function registrardetalle(){
     table = $('#usuario_data').DataTable();
     var usu_id =[];
@@ -178,7 +180,7 @@ function registrardetalle(){
     if (usu_id == 0){
         Swal.fire({
             title: 'Error!',
-            text: 'Seleccionar Usuarios',
+            text: 'Seleccionar Estudiantes',
             icon: 'error',
             confirmButtonText: 'Aceptar'
         })
@@ -211,9 +213,9 @@ function registrardetalle(){
             }
         });
 
-        /* Recargar datatable de los usuarios del curso */
+        /* Recargar datatable de los usuarios del curso para actualizar tabla */
         $('#detalle_data').DataTable().ajax.reload();
-
+        /* Recargamos usuario data para refrescar tabla */
         $('#usuario_data').DataTable().ajax.reload();
         /* ocultar modal */
         $('#modalmantenimiento').modal('hide');
