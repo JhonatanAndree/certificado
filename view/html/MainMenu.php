@@ -40,7 +40,7 @@
           <a href="../AdminMntInstructor/" class="br-menu-link">
             <div class="br-menu-item">
               <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
-              <span class="menu-item-label">Mnt. Instructor</span>
+              <span class="menu-item-label">Mnt. Profesor</span>
             </div>
           </a>
 

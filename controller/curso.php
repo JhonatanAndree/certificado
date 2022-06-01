@@ -43,13 +43,15 @@
             foreach($datos as $row){
                 $sub_array = array();
                 $sub_array[] = $row["cat_nom"];
+                $sub_array[] = $row["cur_nom"];
+                /* Agregada la etiqueta a para ver el modelo de certificado asignado al curso */
                 $sub_array[] = '<a href="'.$row["cur_img"].'" target="_blank">'.strtoupper($row["cur_nom"]).'</a>';
                 $sub_array[] = $row["cur_fechini"];
                 $sub_array[] = $row["cur_fechfin"];
                 $sub_array[] = $row["inst_nom"] ." ". $row["inst_apep"] ." ". $row["inst_apem"];
                 $sub_array[] = '<button type="button" onClick="editar('.$row["cur_id"].');"  id="'.$row["cur_id"].'" class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
                 $sub_array[] = '<button type="button" onClick="eliminar('.$row["cur_id"].');"  id="'.$row["cur_id"].'" class="btn btn-outline-danger btn-icon"><div><i class="fa fa-close"></i></div></button>';
-                $sub_array[] = '<button type="button" onClick="imagen('.$row["cur_id"].');"  id="'.$row["cur_id"].'" class="btn btn-outline-success btn-icon"><div><i class="fa fa-file"></i></div></button>';
+                $sub_array[] = '<button type="button" onClick="imagen('.$row["cur_id"].');"  id="'.$row["cur_id"].'" class="btn btn-outline-primary btn-icon"><div><i class="fa fa-image"></i></div></button>'; /* Imagen para personalización de certificado */
                 $data[] = $sub_array;
             }
 
@@ -100,7 +102,7 @@
             break;
 
         case "update_imagen_curso":
-            $curso->update_imagen_curso($_POST["curx_idx"],$_POST["cur_img"]);
+            $curso->update_imagen_curso($_POST["curx_idx"],$_POST["cur_img"]);/* Recibe los datos del formulario del modal desde el input */
             break;
     }
 ?>

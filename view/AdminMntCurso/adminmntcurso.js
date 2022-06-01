@@ -6,8 +6,8 @@ function init() {
     })
 
     $('#detalle_form').on('submit', function (e) {
-        guardaryeditarimg(e)
-    })
+        guardaryeditarimg(e) /* Previene el doble clic al guardar */
+    }) /* Viene del modal para capturar los datos del form al actualizar imagen de certificado */
 }
 
 function guardaryeditar(e) {
@@ -165,8 +165,8 @@ function combo_instructor() {
 }
 
 function guardaryeditarimg(e) {
-    e.preventDefault()
-    var formData = new FormData($('#detalle_form')[0])
+    e.preventDefault() /* Prevención del doble click */
+    var formData = new FormData($('#detalle_form')[0])/* Invoca los datos del formulario del modal */
     $.ajax({
         url: '../../controller/curso.php?op=update_imagen_curso',
         type: 'POST',
@@ -174,7 +174,7 @@ function guardaryeditarimg(e) {
         contentType: false,
         processData: false,
         success: function (datos) {
-            $('#cursos_data').DataTable().ajax.reload()
+            $('#cursos_data').DataTable().ajax.reload() /* Refrescar  */
             Swal.fire({
                 title: 'Correcto!',
                 text: 'Se Actualizo Correctamente',

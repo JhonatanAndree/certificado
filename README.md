@@ -1,4 +1,4 @@
-# PERSONAL_CertificadosDiplomas
-Proyecto de Certificados y Diplomas 
+# SISTEMA Certificados y Diplomas
+Sistema de emisión y administración de diplomas y certificados.
 
-AnderCode
+Jhonatan Andree

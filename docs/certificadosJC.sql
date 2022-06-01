@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 26-01-2022 a las 04:37:30
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.2
+-- Servidor: localhost:3306
+-- Tiempo de generación: 01-06-2022 a las 22:02:00
+-- Versión del servidor: 5.7.24
+-- Versión de PHP: 8.0.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `andercode_diplomas`
+-- Base de datos: `jhonatan_certificado`
 --
 
 -- --------------------------------------------------------
@@ -45,7 +45,12 @@ INSERT INTO `td_curso_usuario` (`curd_id`, `cur_id`, `usu_id`, `fech_crea`, `est
 (193, 1, 3, '2021-11-03 23:11:34', 1),
 (194, 1, 4, '2021-11-03 23:11:34', 1),
 (195, 2, 4, '2021-11-03 23:16:50', 1),
-(196, 3, 4, '2021-11-03 23:16:56', 1);
+(196, 3, 4, '2021-11-03 23:16:56', 1),
+(197, 26, 1, '2022-05-31 18:20:27', 1),
+(198, 26, 3, '2022-05-31 18:20:27', 1),
+(199, 25, 2, '2022-05-31 18:50:11', 1),
+(200, 19, 11, '2022-06-01 11:58:57', 1),
+(201, 19, 12, '2022-06-01 11:58:57', 1);
 
 -- --------------------------------------------------------
 
@@ -72,7 +77,9 @@ INSERT INTO `tm_categoria` (`cat_id`, `cat_nom`, `fech_crea`, `est`) VALUES
 (5, 'test categoria', '2021-08-17 20:46:37', 0),
 (6, '22222', '2021-08-17 20:47:07', 0),
 (7, '4444', '2021-08-17 20:53:12', 0),
-(8, '5555', '2021-08-17 20:53:22', 0);
+(8, '5555', '2021-08-17 20:53:22', 0),
+(9, 'Ingles', '2022-05-31 10:58:56', 0),
+(10, 'INGLES', '2022-05-31 10:59:17', 1);
 
 -- --------------------------------------------------------
 
@@ -98,16 +105,10 @@ CREATE TABLE `tm_curso` (
 --
 
 INSERT INTO `tm_curso` (`cur_id`, `cat_id`, `cur_nom`, `cur_descrip`, `cur_fechini`, `cur_fechfin`, `inst_id`, `cur_img`, `fech_crea`, `est`) VALUES
-(1, 1, 'CURSO DE HTML5', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2021-04-01', '2021-04-30', 1, '../../public/1.png', '2021-04-26 20:32:32', 1),
-(2, 2, 'INTRODUCCION DE LOS NEGOCIOS', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2021-04-01', '2021-04-30', 2, '../../public/2.png', '2021-04-26 20:32:32', 1),
-(3, 2, 'PHP', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2021-04-01', '2021-04-30', 2, '../../public/3.png', '2021-04-26 20:32:32', 1),
-(19, 1, 'LARAVEL y MYSQL', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2021-04-01', '2021-04-30', 1, '../../public/4.png', '2021-04-26 20:32:32', 1),
-(20, 2, 'CURSO3', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2021-04-01', '2021-04-30', 2, '../../public/1.png', '2021-04-26 20:32:32', 1),
-(21, 2, 'CURSO4', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2021-04-01', '2021-04-30', 2, '../../public/1.png', '2021-04-26 20:32:32', 1),
-(22, 2, 'CURSO5', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2021-04-01', '2021-04-30', 2, '../../public/1613003806.png', '2021-04-26 20:32:32', 1),
-(23, 2, 'CURSO6', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2021-04-01', '2021-04-30', 2, '../../public/957232075.png', '2021-04-26 20:32:32', 1),
-(24, 2, 'CURSO7', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2021-04-01', '2021-04-30', 2, '../../public/1127664046.png', '2021-04-26 20:32:32', 1),
-(25, 1, 'ESTUDIO DE MERCADO', 'CURSO de MERCADO', '2021-08-22', '2021-09-22', 1, '../../public/28629721.png', '2021-08-22 14:54:50', 1);
+(1, 1, 'CURSO DE HTML5', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five.', '2021-04-01', '2021-04-30', 1, '../../public/1.png', '2021-04-26 20:32:32', 1),
+(19, 1, 'LARAVEL y MYSQL', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially.', '2021-04-01', '2021-04-30', 1, '../../public/3.png', '2021-04-26 20:32:32', 1),
+(25, 1, 'ESTUDIO DE MERCADO', 'CURSO de MERCADO', '2021-08-22', '2021-09-22', 1, '../../public/2.png', '2021-08-22 14:54:50', 1),
+(26, 2, 'Email Marketing', 'La publicidad por correo electrónico, email marketing en inglés, marketing por email, correo comercial o email comercial, ​ es enviar un mensaje comercial directamente utilizando como canal el correo electrónico', '2022-04-18', '2022-05-27', 2, '../../public/4.png', '2022-05-31 08:53:29', 1);
 
 -- --------------------------------------------------------
 
@@ -165,10 +166,10 @@ CREATE TABLE `tm_usuario` (
 --
 
 INSERT INTO `tm_usuario` (`usu_id`, `usu_nom`, `usu_apep`, `usu_apem`, `usu_correo`, `usu_pass`, `usu_sex`, `usu_telf`, `rol_id`, `usu_dni`, `fech_crea`, `est`) VALUES
-(1, 'ANDERSON', 'BASTIDAS', 'VICENTE', 'DAVIS_ANDERSON_87@HOTMAIL.COM', '123456', 'M', '989898989', 1, 1122334, '2021-04-26 20:14:08', 1),
-(2, 'DAVIS', 'CASTILLO', 'FUJIMORI', 'FUJICASTI@HOTMAIL.COM', '123456', 'M', '989898989', 1, 4445462, '2021-04-26 20:14:08', 1),
-(3, 'BULMA', 'VEGETA', 'SAYAYIN', 'GOKU@GMAIL.COM', '123456', 'F', '989898989', 1, 2233445, '2021-04-26 20:14:08', 1),
-(4, 'ADMIN', 'SISTEMA', 'SIS', 'ADMIN@ADMIN.COM', '1234567', 'M', '989898989', 2, 4445464, '2021-04-26 20:14:08', 1),
+(1, 'Jhonatan Andree', 'Carrión', 'Neyra', 'jcandree@gmail.com', '123456', 'M', '989898989', 1, 1122334, '2021-04-26 20:14:08', 1),
+(2, 'Carlos', 'Castillo', 'Gonzales', 'carlosg@gmail.com', '123456', 'M', '989898989', 1, 4445462, '2021-04-26 20:14:08', 1),
+(3, 'Bulma', 'Vegeta', 'Sayayin', 'vulma@gmail.com', '123456', 'F', '989898989', 1, 2233445, '2021-04-26 20:14:08', 1),
+(4, 'Admin', 'Sistema', 'SIS', 'admin@adminjc.com', '1234567', 'M', '989898989', 2, 4445464, '2021-04-26 20:14:08', 1),
 (9, 'USU2', 'USU2', 'USU2', 'USU2@ADMIN.COM', '123456', 'M', '989898989', 1, 4445465, '2021-04-26 20:14:08', 1),
 (10, 'USU3', 'USU3', 'USU3', 'USU3@ADMIN.COM', '123456', 'M', '989898989', 1, 4445466, '2021-04-26 20:14:08', 1),
 (11, 'USU4', 'USU4', 'USU4', '4@ADMIN.COM', '123456', 'M', '989898989', 1, 4445467, '2021-04-26 20:14:08', 1),
@@ -216,19 +217,19 @@ ALTER TABLE `tm_usuario`
 -- AUTO_INCREMENT de la tabla `td_curso_usuario`
 --
 ALTER TABLE `td_curso_usuario`
-  MODIFY `curd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
+  MODIFY `curd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=202;
 
 --
 -- AUTO_INCREMENT de la tabla `tm_categoria`
 --
 ALTER TABLE `tm_categoria`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `tm_curso`
 --
 ALTER TABLE `tm_curso`
-  MODIFY `cur_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `cur_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `tm_instructor`

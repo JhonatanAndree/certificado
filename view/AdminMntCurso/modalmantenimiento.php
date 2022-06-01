@@ -43,7 +43,7 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="form-control-label">Instructor: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">Profesor: <span class="tx-danger">*</span></label>
                             <select class="form-control select2" style="width:100%" name="inst_id" id="inst_id" data-placeholder="Seleccione">
                                 <option label="Seleccione"></option>
 

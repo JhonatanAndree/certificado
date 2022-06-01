@@ -45,7 +45,7 @@
                     <th class="wd-15p">Nombre</th>
                     <th class="wd-15p">Fech.Inicio</th>
                     <th class="wd-20p">Fech.Fin</th>
-                    <th class="wd-15p">Instructor</th>
+                    <th class="wd-15p">Profesor</th>
                     <th class="wd-10p"></th>
                     <th class="wd-10p"></th>
                     <th class="wd-10p"></th>
@@ -62,7 +62,7 @@
     </div>
 
     <?php require_once("modalmantenimiento.php"); ?>
-    <?php require_once("modalfile.php"); ?>
+    <?php require_once("modalfile.php"); ?> <!-- Cargar imagen de certificado personalizado -->
 
     <?php require_once("../html/MainJs.php"); ?>
     <script type="text/javascript" src="adminmntcurso.js"></script>
