@@ -11,7 +11,7 @@ $(document).ready(function(){
     $.post("../../controller/usuario.php?op=mostrar_curso_detalle", { curd_id : curd_id }, function (data) {
         data = JSON.parse(data);
 
-        /* Ruta de la Imagen */
+        /* Ruta de la Imagen del certificado*/
         image.src = data.cur_img;
         /* Dimensionamos y seleccionamos imagen */
         ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
@@ -21,18 +21,18 @@ $(document).ready(function(){
         ctx.textAlign = "center";
         ctx.textBaseline = 'middle';
         var x = canvas.width / 2;
-        ctx.fillText(data.usu_nom+' '+data.usu_apep+' '+data.usu_apem, x, 250);
+        ctx.fillText(data.usu_nom+' '+data.usu_apep+' '+data.usu_apem, x, 270);
 
-        ctx.font = '30px Arial';
-        ctx.fillText(data.cur_nom, x, 320);
+        ctx.font = '35px Arial';
+        ctx.fillText(data.cur_nom, x, 380);
 
-        ctx.font = '18px Arial';
-        ctx.fillText(data.inst_nom+' '+ data.inst_apep+' '+data.inst_apem, x, 420);
+        ctx.font = '16px Arial';
+        ctx.fillText(data.inst_nom+' '+ data.inst_apep+' '+data.inst_apem, x, 440);
         ctx.font = '15px Arial';
-        ctx.fillText('Instructor', x, 450);
+        ctx.fillText('Profesor', x, 460);
 
         ctx.font = '15px Arial';
-        ctx.fillText('Fecha de Inicio : '+data.cur_fechini+' / '+'Fecha de Finalización : '+data.cur_fechfin+'', x, 490);
+        ctx.fillText('Fecha de Inicio : '+data.cur_fechini+' / '+'Fecha de Finalización : '+data.cur_fechfin+'', x, 615);
 
         /* Ruta de la Imagen */
         imageqr.src = "../../public/qr/"+curd_id+".png";
@@ -44,7 +44,7 @@ $(document).ready(function(){
 
 });
 
-/* Recarga por defecto solo 1 vez */
+/* Recarga por defecto solo 1 vez para mostrar la imagen base del certificado */
 window.onload = function() {
     if(!window.location.hash) {
         window.location = window.location + '#loaded';

@@ -149,7 +149,7 @@
                 tm_usuario.usu_nom,
                 tm_usuario.usu_apep,
                 tm_usuario.usu_apem,
-                tm_curso.cur_img,
+                tm_curso.cur_img, /* Imagen de certificado de curso */
                 tm_instructor.inst_id,
                 tm_instructor.inst_nom,
                 tm_instructor.inst_apep,

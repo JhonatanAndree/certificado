@@ -11,6 +11,8 @@
   <div class="ht-100v d-flex align-items-center justify-content-center">
     <div class="wd-lg-70p wd-xl-50p tx-center pd-x-40">
       <h1 class="tx-100 tx-xs-140 tx-normal tx-inverse tx-roboto mg-b-0">
+        <h3>Certificado de culminación del curso</h3>
+        <p></p>
 
         <canvas id="canvas" height="650px" width="900px" class="img-fluid" alt="Responsive image"></canvas>
 
