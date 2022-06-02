@@ -90,13 +90,15 @@
                 $sub_array[] = $idx;
                 $data[] = $sub_array;
             }
-
             echo json_encode($data);
             break;
 
+        /* Al visualizar un certificado para un usuario en particular, el único dato que se modifica es el "curd_id".
+        Ese es el dato que se asigna cuando asignamos a un estudiante y curso aprobado.
+        Por tal motivo ese es el dato que usaremos para identificar el QR único de cada usuario */
         case "generar_qr":
             require 'phpqrcode/qrlib.php';
-            //Primer Parametro - Text del QR
+            //Primer Parametro - Texto del QR
             //Segundo Parametro - Ruta donde se guardara el archivo
             QRcode::png(conectar::ruta()."view/Certificado/index.php?curd_id=".$_POST["curd_id"],"../public/qr/".$_POST["curd_id"].".png",'L',32,5);
             break;

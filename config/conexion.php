@@ -28,6 +28,7 @@
 
         /*Ruta principal del proyecto */
         public static function ruta(){
+            //QA
             return "http://certificado.test/";
             //Produccion
             //return "http://certificadosydiplomas.com/";

@@ -196,16 +196,15 @@ function registrardetalle(){
             data: formData,
             contentType: false,
             processData: false,
-            success : function(data) {
-                data = JSON.parse(data);
-
-                data.forEach(e => {
+            success : function(data) { /* Aquí obtenemos un json con un formato que contiene el curd_id */
+                data = JSON.parse(data);/* Parseamos ese resultado json para poder recorrer e ingresar a cada uno de ellos de la siguiente manera: */
+                data.forEach(e => { /* Recorremos el primero */
                     e.forEach(i => {
-                        console.log(i['curd_id']);
+                        console.log(i['curd_id']); /* Aquí obtenemos el curd_id que tanto buscabamos y listamos el ajax con el resultado correcto: */
                         $.ajax({
                             type: "POST",
-                            url: "../../controller/curso.php?op=generar_qr",
-                            data: {curd_id : i['curd_id']},
+                            url: "../../controller/curso.php?op=generar_qr",/* Le pasamos la URL que está en el controlador/curso y */
+                            data: {curd_id : i['curd_id']},/* le pasamos la información */
                             dataType: "json"
                         });
                     });

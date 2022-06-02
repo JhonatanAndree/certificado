@@ -116,7 +116,7 @@
             $sql->bindValue(1, $cur_id);
             $sql->bindValue(2, $usu_id);
             $sql->execute();
-
+            /* Capturamos el id curd_id que insertó para usarlo en la generación del QR */
             $sql1="select last_insert_id() as 'curd_id'";
             $sql1=$conectar->prepare($sql1);
             $sql1->execute();
