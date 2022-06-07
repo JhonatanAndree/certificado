@@ -239,7 +239,7 @@
             $sql->bindValue(6, $usu_sex);
             $sql->bindValue(7, $usu_telf);
             $sql->bindValue(8, $rol_id);
-            $sql->bindValue(9, $usu_dni);
+            $sql->bindValue(9, $usu_dni);/* Búsqueda por DNI */
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
@@ -258,7 +258,7 @@
                     usu_sex = ?,
                     usu_telf = ?,
                     rol_id = ?,
-                    usu_dni = ?
+                    usu_dni = ?/* Búsqueda por DNI */
                 WHERE
                     usu_id = ?";
             $sql=$conectar->prepare($sql);

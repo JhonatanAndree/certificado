@@ -110,7 +110,7 @@
                 echo json_encode($output);
             }
             break;
-        /*Mostrar informacion segun DNI del usuario registrado */
+        /*Mostrar informacion segun DNI del usuario */
         case "consulta_dni":
             $datos = $usuario->get_usuario_x_dni($_POST["usu_dni"]);
             if(is_array($datos)==true and count($datos)<>0){

@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 
 /* Inicializamos la imagen */
 const image = new Image();
-const imageqr = new Image();
+const imageqr = new Image(); /* Necesario para el QR en el certificado */
 
 $(document).ready(function(){
     var curd_id = getUrlParameter('curd_id');
@@ -34,10 +34,10 @@ $(document).ready(function(){
         ctx.font = '15px Arial';
         ctx.fillText('Fecha de Inicio : '+data.cur_fechini+' / '+'Fecha de Finalización : '+data.cur_fechfin+'', x, 615);
 
-        /* Ruta de la Imagen */
+        /* Ruta de la Imagen QR */
         imageqr.src = "../../public/qr/"+curd_id+".png";
         /* Dimensionamos y seleccionamos imagen */
-        ctx.drawImage(imageqr, 400, 500, 100, 100);
+        ctx.drawImage(imageqr, 389, 480, 120, 120);
         /* Inserción de la descripción del curso en consulta. */
         $('#cur_descrip').html(data.cur_descrip);
     });

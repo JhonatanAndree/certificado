@@ -1,8 +1,8 @@
 function init(){
-
 }
 
 $(document).ready(function(){
+    /* Ocultamos la tabla de la vista antes de la busqueda */
     $("#divpanel").hide();
 });
 $(document).on("click","#btnconsultar", function(){
@@ -10,16 +10,14 @@ $(document).on("click","#btnconsultar", function(){
     if (usu_dni.length == 0){
         Swal.fire({
             title: 'Error!',
-            text: 'DNI Vacio',
+            text: 'DNI Vacío',
             icon: 'error',
             confirmButtonText: 'Aceptar'
         })
     }else{
-
         $.post("../../controller/usuario.php?op=consulta_dni",{usu_dni : usu_dni}, function (data) {
             if (data.length>0){
                 data = JSON.parse(data);
-
                 $("#lbldatos").html("Listado de Cursos : "+data.usu_apep+" "+data.usu_apem+" "+data.usu_nom);
 
                 $('#cursos_data').DataTable({
@@ -66,12 +64,12 @@ $(document).on("click","#btnconsultar", function(){
                         }
                     },
                 });
-
+                /* Si existe busqueda de DNI, mostramos la información */
                 $("#divpanel").show();
             }else{
                 Swal.fire({
                     title: 'Error!',
-                    text: 'No Existe Usuario',
+                    text: 'No existe estudiante en consulta',
                     icon: 'error',
                     confirmButtonText: 'Aceptar'
                 })
@@ -83,6 +81,6 @@ $(document).on("click","#btnconsultar", function(){
 });
 
 function certificado(curd_id){
-    console.log(curd_id);
+    /* console.log(curd_id); */
     window.open('../Certificado/index.php?curd_id='+ curd_id +'','_blank');
 }

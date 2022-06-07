@@ -23,8 +23,8 @@
     <meta property="og:image:height" content="600">
 
     <!-- Meta -->
-    <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
-    <meta name="author" content="ThemePixels">
+    <meta name="description" content="Consulta de certificado o diploma de tu institución.">
+    <meta name="author" content="Jhonatan Andree">
 
     <title>Consulta</title>
 
@@ -43,8 +43,8 @@
 
     <div class="ht-100v d-flex align-items-center justify-content-center">
       <div class="wd-lg-70p wd-xl-50p tx-center pd-x-40">
-        <h1 class="tx-100 tx-xs-140 tx-normal tx-inverse tx-roboto mg-b-0">Consulta</h1>
-        <h5 class="tx-xs-24 tx-normal tx-info mg-b-30 lh-5">Ingrese DNI para Validar Certificados</h5>
+        <h1 class="tx-45 tx-xs-50 tx-normal tx-inverse tx-roboto mg-b-0">Consultar Certificados</h1>
+        <h5 class="tx-xs-24 tx-normal tx-info mg-b-30 lh-5">Ingrese DNI para Validar</h5>
 
         <div class="d-flex justify-content-center">
           <div class="input-group wd-xs-300">
@@ -54,7 +54,7 @@
             </div>
           </div>
         </div>
-
+        <!-- Panel para listar certificados asignados al DNI en consulta -->
         <div class="row row-sm mg-t-20" id="divpanel">
           <div class="col-12">
             <div class="card pd-0 bd-0 shadow-base">
@@ -62,7 +62,7 @@
                 <div class="d-flex align-items-center justify-content-between">
                   <div>
                     <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1" id="lbldatos">Listado de Cursos</h6>
-                    <p class="mg-b-0">Aqui podra visualizar los Certificados</p>
+                    <p class="mg-b-0">Aquí visualiza los Certificados</p>
                   </div>
                 </div>
               </div>

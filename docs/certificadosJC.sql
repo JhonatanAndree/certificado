@@ -113,7 +113,7 @@ INSERT INTO `tm_curso` (`cur_id`, `cat_id`, `cur_nom`, `cur_descrip`, `cur_fechi
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tm_instructor`
+-- Estructura de tabla para la tabla `profesor`
 --
 
 CREATE TABLE `tm_instructor` (
