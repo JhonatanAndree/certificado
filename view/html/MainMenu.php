@@ -57,6 +57,13 @@
               <span class="menu-item-label">Detalle Certificado</span>
             </div>
           </a>
+
+          <a href="../Consulta/" class="br-menu-link">
+            <div class="br-menu-item">
+              <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
+              <span class="menu-item-label">Consutar Certificado</span>
+            </div>
+          </a>
         <?php
       }
     ?>
