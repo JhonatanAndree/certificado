@@ -8,7 +8,7 @@ if (isset($_SESSION["usu_id"])) {
 
   <head>
     <?php require_once("../html/MainHead.php"); ?>
-    <title>Empresa::Curso</title>
+    <title>TFORMA::Curso</title>
   </head>
 
   <body>

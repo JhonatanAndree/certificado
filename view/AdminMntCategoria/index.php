@@ -9,7 +9,7 @@ if (isset($_SESSION["usu_id"])) {
   <head>
     <?php require_once("../html/MainHead.php"); ?>
 
-    <title>Empresa::MntCategoria</title>
+    <title>TFORMA::MntCategoria</title>
   </head>
 
   <body>

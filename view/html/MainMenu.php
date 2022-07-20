@@ -1,4 +1,4 @@
-<div class="br-logo"><a href="../UsuHome/"><span>[</span>Empresa<span>]</span></a></div>
+<div class="br-logo"><a href="../UsuHome/"><span>[</span>TFORMA<span>]</span></a></div>
 
 <div class="br-sideleft overflow-y-auto">
   <label class="sidebar-label pd-x-15 mg-t-20">Menu</label>
@@ -79,7 +79,7 @@
     <a href="../html/Logout.php" class="br-menu-link">
       <div class="br-menu-item">
         <i class="menu-item-icon icon ion-power tx-20"></i>
-        <span class="menu-item-label">Cerrar Sesion</span>
+        <span class="menu-item-label">Cerrar Sesión</span>
       </div>
     </a>
 

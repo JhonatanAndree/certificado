@@ -7,7 +7,7 @@
 <html lang="es">
   <head>
     <?php require_once("../html/MainHead.php"); ?>
-    <title>Empresa::Home</title>
+    <title>TFORMA::Home</title>
   </head>
 
   <body>

@@ -2,7 +2,7 @@
 <html lang="es" class="pos-relative">
   <head>
     <?php require_once("../html/MainHead.php"); ?>
-    <title>Empresa::404</title>
+    <title>TFORMA::404</title>
   </head>
 
   <body class="pos-relative">

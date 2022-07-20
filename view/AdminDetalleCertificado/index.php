@@ -8,7 +8,7 @@
   <head>
     <?php require_once("../html/MainHead.php"); ?>
 
-    <title>Empresa::Detalle Certificado</title>
+    <title>TFORMA::Detalle Certificado</title>
   </head>
 
   <body>

@@ -8,7 +8,7 @@
   <head>
     <?php require_once("../html/MainHead.php"); ?>
 
-    <title>Empresa::MntUsuario</title>
+    <title>TFORMA::MntUsuario</title>
   </head>
 
   <body>
