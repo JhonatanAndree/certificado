@@ -1,4 +1,4 @@
 # SISTEMA Certificados y Diplomas
 Sistema de emisión y administración de diplomas y certificados.
 
-Jhonatan Andree
+Jhonatan Andree Carrión Neyra

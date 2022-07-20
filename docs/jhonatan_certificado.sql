@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 01-06-2022 a las 22:02:00
+-- Tiempo de generación: 19-07-2022 a las 23:02:41
 -- Versión del servidor: 5.7.24
 -- Versión de PHP: 8.0.15
 
@@ -113,7 +113,7 @@ INSERT INTO `tm_curso` (`cur_id`, `cat_id`, `cur_nom`, `cur_descrip`, `cur_fechi
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `profesor`
+-- Estructura de tabla para la tabla `tm_instructor`
 --
 
 CREATE TABLE `tm_instructor` (
