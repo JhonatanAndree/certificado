@@ -12,7 +12,7 @@
                 /*Cadena de Conexion QA*/
 				/* $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=jhonatan_certificado","root",""); */
                 /*Cadena de Conexion Produccion*/
-				$conectar = $this->dbh = new PDO("mysql:host=sdb-x.hosting.stackcp.net;dbname=tforma-32313459a7","tforma-32313459a7","ol15*7bn3sh");
+				$conectar = $this->dbh = new PDO("mysql:host=sdb-x.hosting.stackcp.net;dbname=tforma-3231346046","tforma-3231346046","f@eDCV:y8hF%");
 				return $conectar;
 			} catch (Exception $e) {
                 /*En Caso hubiera un error en la cadena de conexion */
