@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 19-07-2022 a las 23:02:41
+-- Tiempo de generación: 24-07-2022 a las 16:42:56
 -- Versión del servidor: 5.7.24
 -- Versión de PHP: 8.0.15
 
@@ -166,14 +166,14 @@ CREATE TABLE `tm_usuario` (
 --
 
 INSERT INTO `tm_usuario` (`usu_id`, `usu_nom`, `usu_apep`, `usu_apem`, `usu_correo`, `usu_pass`, `usu_sex`, `usu_telf`, `rol_id`, `usu_dni`, `fech_crea`, `est`) VALUES
-(1, 'Jhonatan Andree', 'Carrión', 'Neyra', 'jcandree@gmail.com', '123456', 'M', '989898989', 1, 1122334, '2021-04-26 20:14:08', 1),
-(2, 'Carlos', 'Castillo', 'Gonzales', 'carlosg@gmail.com', '123456', 'M', '989898989', 1, 4445462, '2021-04-26 20:14:08', 1),
-(3, 'Bulma', 'Vegeta', 'Sayayin', 'vulma@gmail.com', '123456', 'F', '989898989', 1, 2233445, '2021-04-26 20:14:08', 1),
-(4, 'Admin', 'Sistema', 'SIS', 'admin@adminjc.com', '1234567', 'M', '989898989', 2, 4445464, '2021-04-26 20:14:08', 1),
-(9, 'USU2', 'USU2', 'USU2', 'USU2@ADMIN.COM', '123456', 'M', '989898989', 1, 4445465, '2021-04-26 20:14:08', 1),
-(10, 'USU3', 'USU3', 'USU3', 'USU3@ADMIN.COM', '123456', 'M', '989898989', 1, 4445466, '2021-04-26 20:14:08', 1),
-(11, 'USU4', 'USU4', 'USU4', '4@ADMIN.COM', '123456', 'M', '989898989', 1, 4445467, '2021-04-26 20:14:08', 1),
-(12, 'USU5', 'USU5', 'USU5', '5@ADMIN.COM', '123456', 'M', '989898989', 1, 4445468, '2021-04-26 20:14:08', 1);
+(1, 'Jhonatan Andree', 'Carrión', 'Neyra', 'jcandree@gmail.com', '43408381', 'M', '989898989', 2, 43408381, '2021-04-26 20:14:08', 1),
+(2, 'Carlos', 'Castillo', 'Gonzales', 'carlosg@gmail.com', '4445462', 'M', '989898989', 1, 4445462, '2021-04-26 20:14:08', 1),
+(3, 'Bulma', 'Vegeta', 'Sayayin', 'vulma@gmail.com', '2233445', 'F', '989898989', 1, 2233445, '2021-04-26 20:14:08', 0),
+(4, 'Admin', 'Sistema', 'SIS', 'admin@adminjc.com', '4445464', 'M', '989898989', 2, 4445464, '2021-04-26 20:14:08', 1),
+(9, 'USU2', 'USU2', 'USU2', 'USU2@ADMIN.COM', '4445465', 'M', '989898989', 1, 4445465, '2021-04-26 20:14:08', 1),
+(10, 'USU3', 'USU3', 'USU3', 'USU3@ADMIN.COM', '4445466', 'M', '989898989', 1, 4445466, '2021-04-26 20:14:08', 1),
+(11, 'USU4', 'USU4', 'USU4', '4@ADMIN.COM', '4445467', 'M', '989898989', 1, 4445467, '2021-04-26 20:14:08', 1),
+(12, 'USU5', 'USU5', 'USU5', '5@ADMIN.COM', '4445468', 'M', '989898989', 1, 4445468, '2021-04-26 20:14:08', 1);
 
 --
 -- Índices para tablas volcadas

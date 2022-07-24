@@ -10,9 +10,9 @@
         protected function Conexion(){
             try {
                 /*Cadena de Conexion QA*/
-				$conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=jhonatan_certificado","root","");
+				/* $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=jhonatan_certificado","root",""); */
                 /*Cadena de Conexion Produccion*/
-				//$conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=jhonatan_certificado","diploma1","@jhonatan");
+				$conectar = $this->dbh = new PDO("mysql:host=sdb-x.hosting.stackcp.net;dbname=tforma-32313459a7","tforma-32313459a7","ol15*7bn3sh");
 				return $conectar;
 			} catch (Exception $e) {
                 /*En Caso hubiera un error en la cadena de conexion */
@@ -29,8 +29,8 @@
         /*Ruta principal del proyecto */
         public static function ruta(){
             //QA
-            return "http://certificado.test/";
+            /* return "http://certificado.test/"; */
             //Produccion
-            //return "http://certificadosydiplomas.com/";
+            return "https://mecertifica.online/tforma/";
         }
     }
