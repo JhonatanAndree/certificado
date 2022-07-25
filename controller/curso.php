@@ -43,7 +43,6 @@
             foreach($datos as $row){
                 $sub_array = array();
                 $sub_array[] = $row["cat_nom"];
-                $sub_array[] = $row["cur_nom"];
                 /* Agregada la etiqueta a para ver el modelo de certificado asignado al curso */
                 $sub_array[] = '<a href="'.$row["cur_img"].'" target="_blank">'.strtoupper($row["cur_nom"]).'</a>';
                 $sub_array[] = $row["cur_fechini"];
